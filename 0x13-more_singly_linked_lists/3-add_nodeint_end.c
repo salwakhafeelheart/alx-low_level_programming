@@ -1,4 +1,4 @@
-nclude "lists.h"
+#include "lists.h"
 
 /**
  *add_nodeint_end - Adds a new node at the
@@ -10,16 +10,16 @@ nclude "lists.h"
  *Return: If the function fails - NULL.
  *Otherwise - the address of the new element.
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new;
+	listint_t *new, *last;
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
 
 	new->n = n;
-	new->next = *head;
+	new->next = NULL;
 
 	if (*head == NULL)
 		*head = new;
